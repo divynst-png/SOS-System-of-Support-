@@ -1,0 +1,207 @@
+/* Retro Terminal Fonts */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* Enhanced Retro Terminal Color Palette */
+  --bg-app: #000000;
+  /* Pure black for authentic CRT feel */
+  --bg-active: #0a0e14;
+  /* Very dark blue-black */
+  --bg-hover: #141a24;
+
+  /* Brighter Retro Accents */
+  --accent-primary: #00ff9f;
+  /* Bright neon green (main accent) */
+  --accent-secondary: #00d4ff;
+  /* Electric cyan */
+  --accent-tertiary: #ff00ff;
+  /* Vibrant magenta */
+  --accent-dim: #00aa77;
+  /* Dim green for borders */
+  --accent-alert: #ff0055;
+  /* Bright red-pink alert */
+  --accent-yellow: #ffff00;
+  /* Neon yellow */
+
+  /* Enhanced Text Colors */
+  --text-body: #00ff9f;
+  /* Bright green - main text */
+  --text-bright: #ffffff;
+  /* Pure white for emphasis */
+  --text-muted: #00aa77;
+  /* Dimmed green */
+  --text-dim: #005544;
+  /* Very dim green */
+
+  /* Borders */
+  --border-dim: #00aa77;
+  /* Green border */
+  --border-bright: #00ff9f;
+  /* Bright green border */
+
+  /* Retro Font Stack */
+  --font-mono: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
+  --font-size-base: 1.2rem;
+  /* Larger for VT323 readability */
+  --accent-success: #06ffa5;
+  /* Bright neon green */
+  --accent-success-dim: #05a871;
+
+  /* Typography */
+  --text-body: #f0f4f8;
+  /* Crisp white-blue */
+  --text-muted: #9ca8b8;
+  /* Soft slate */
+  --text-primary: #06d6a0;
+  /* Matches accent */
+  --text-glow: #00fff5;
+  /* Neon cyan for glows */
+
+  /* Glow & Shadow Effects */
+  --glow-primary: 0 0 20px rgba(6, 214, 160, 0.4), 0 0 40px rgba(6, 214, 160, 0.2);
+  --glow-secondary: 0 0 20px rgba(0, 180, 216, 0.4), 0 0 40px rgba(0, 180, 216, 0.2);
+  --glow-alert: 0 0 20px rgba(255, 0, 110, 0.5), 0 0 40px rgba(255, 0, 110, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(6, 214, 160, 0.1);
+
+  /* Legacy Variable Mapping for compatibility */
+  --terminal-bg: var(--bg-app);
+  --terminal-green: var(--accent-primary);
+  --terminal-green-dim: var(--accent-dim);
+  --terminal-amber: var(--text-body);
+  --terminal-amber-dim: var(--text-muted);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-app);
+  color: var(--text-body);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.05em;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000 0%, #001a0f 25%, #000a05 50%, #001408 75%, #000000 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-body);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Subtle CRT glow pattern */
+#root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(0, 255, 159, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Base UI Elements */
+.crt-container {
+  /* Deprecated CRT container, now just a layout wrapper */
+  width: 100%;
+  height: 100%;
+}
+
+.crt-overlay {
+  /* Removed CRT overlay */
+  display: none;
+}
+
+/* Animations */
+.blink {
+  animation: blink 1.5s steps(2) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-active);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-bright);
+}
+
+/* Premium Animation Effects */
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: var(--glow-primary);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(6, 214, 160, 0.6), 0 0 60px rgba(6, 214, 160, 0.3);
+    opacity: 0.9;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}

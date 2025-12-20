@@ -1,0 +1,74 @@
+.terminal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--bg-app);
+}
+
+.terminal-box {
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-app);
+    position: relative;
+    z-index: 10;
+}
+
+/* Dashboard Header */
+.terminal-header {
+    display: flex;
+    justify-content: center;
+    /* Center alignment */
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    /* Increased padding */
+    border-bottom: 1px solid var(--border-dim);
+    margin-bottom: 1.5rem;
+    /* Increased spacing */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.terminal-title {
+    font-size: 2rem;
+    /* ~32px */
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #f0f4f8, #06d6a0, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    filter: drop-shadow(0 0 15px rgba(6, 214, 160, 0.3));
+}
+
+/* Layout Content - Split Pane */
+.terminal-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    /* Space between sidebar and main */
+    padding: 0 1rem;
+}
+
+/* Dashboard Footer */
+.terminal-footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-dim);
+    padding: 0.75rem 1rem 0;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
