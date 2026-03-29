@@ -278,13 +278,13 @@
 /* Modern Component Classes */
 
 .card {
-  background: linear-gradient(145deg, rgba(26, 31, 53, 0.9), rgba(26, 31, 53, 0.7));
+  background: var(--card-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(61, 74, 110, 0.3);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(6, 214, 160, 0.05);
+  box-shadow: var(--card-shadow);
   position: relative;
 }
 
@@ -301,8 +301,8 @@
 }
 
 .card:hover {
-  border-color: rgba(6, 214, 160, 0.4);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(6, 214, 160, 0.15);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(6, 214, 160, 0.15);
   transform: translateY(-2px);
 }
 
@@ -312,9 +312,10 @@
 
 .card.active {
   border-color: var(--accent-primary);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 214, 160, 0.3);
-  background: linear-gradient(145deg, rgba(26, 31, 53, 1), rgba(37, 45, 72, 0.9));
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 30px rgba(6, 214, 160, 0.3);
+  background: var(--card-bg-active);
 }
+
 
 .badge {
   display: inline-flex;
@@ -903,4 +904,28 @@
   ::-webkit-scrollbar {
     width: 4px;
   }
+}
+
+/* ── Tailwind Fallbacks for Light/Dark Theme Support ── */
+.bg-slate-900,
+.bg-slate-800,
+.bg-slate-600 {
+  background: var(--panel-bg);
+}
+
+.bg-slate-900\/50,
+.bg-slate-800\/30,
+.bg-slate-800\/50,
+.bg-slate-900\/80,
+.bg-slate-900\/90 {
+  background: var(--panel-bg);
+}
+
+.hover\:bg-slate-700:hover,
+.hover\:bg-white\/5:hover {
+  background: var(--btn-bg-active);
+}
+
+.text-white {
+  color: var(--text-bright);
 }

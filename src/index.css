@@ -27,6 +27,15 @@
   /* ── Borders ──────────────────────────────────── */
   --border-dim:    #00aa77;
   --border-bright: #06d6a0;
+  --border-subtle: rgba(61, 74, 110, 0.3);
+
+  /* ── Components ───────────────────────────────── */
+  --panel-bg: linear-gradient(180deg, rgba(26, 31, 53, 0.5), rgba(26, 31, 53, 0.3));
+  --btn-bg: rgba(30, 41, 59, 0.6);
+  --btn-bg-active: linear-gradient(135deg, rgba(6, 214, 160, 0.13), rgba(6, 214, 160, 0.05));
+  --card-bg: linear-gradient(145deg, rgba(26, 31, 53, 0.9), rgba(26, 31, 53, 0.7));
+  --card-bg-active: linear-gradient(145deg, rgba(26, 31, 53, 1), rgba(37, 45, 72, 0.9));
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(6, 214, 160, 0.05);
 
   /* ── Typography ───────────────────────────────── */
   --font-mono:      'VT323', 'Share Tech Mono', 'Courier New', monospace;
@@ -196,6 +205,15 @@ body.theme-light {
   --text-dim:     #94a3b8;
   --border-dim:    #94a3b8;
   --border-bright: #0d9488;
+  --border-subtle: rgba(203, 213, 225, 0.5);
+  
+  --panel-bg: rgba(255, 255, 255, 0.5);
+  --btn-bg: rgba(241, 245, 249, 0.8);
+  --btn-bg-active: rgba(226, 232, 240, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-bg-active: rgba(248, 250, 252, 1);
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
   --glow-primary:   0 0 12px rgba(13, 148, 136, 0.25);
   --shadow-lg:      0 20px 60px rgba(0, 0, 0, 0.12);
   --terminal-bg:        var(--bg-app);

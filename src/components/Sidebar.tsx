@@ -8,8 +8,8 @@ interface SidebarProps {
 
 export const Sidebar = ({ selectedType, onSelect, isFocused }: SidebarProps) => {
     return (
-        <div className={`flex flex-col gap-2 p-3 border-r h-full w-full transition-all ${isFocused ? 'border-r-2 border-r-teal-400 shadow-[4px_0_20px_rgba(6,214,160,0.2)]' : 'border-r border-gray-700/50'}`} style={{ background: 'linear-gradient(180deg, rgba(26, 31, 53, 0.5), rgba(26, 31, 53, 0.3))' }}>
-            <div className="text-xs text-white mb-2 uppercase tracking-widest px-2 flex items-center gap-2" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)' }}>
+        <div className={`flex flex-col gap-2 p-3 border-r h-full w-full transition-all overflow-y-auto custom-scrollbar ${isFocused ? 'border-r-2 border-r-teal-400 shadow-[4px_0_20px_rgba(6,214,160,0.2)]' : 'border-r border-gray-700/50'}`} style={{ background: 'var(--panel-bg)' }}>
+            <div className="text-xs mb-2 uppercase tracking-widest px-2 flex items-center gap-2" style={{ color: 'var(--text-bright)' }}>
                 <span style={{ color: 'var(--accent-primary)' }}>◆</span> Categories {isFocused && <span className="blink" style={{ color: 'var(--accent-primary)' }}>_</span>}
             </div>
             {types.map((t) => (
@@ -27,14 +27,13 @@ export const Sidebar = ({ selectedType, onSelect, isFocused }: SidebarProps) => 
                         borderRadius: '8px',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                        background: 'linear-gradient(135deg, rgba(6, 214, 160, 0.13), rgba(6, 214, 160, 0.05))',
-                        border: '1px solid rgba(6, 214, 160, 0.28)',
-                        borderLeft: isFocused ? '4px solid #06d6a0' : '4px solid rgba(6, 214, 160, 0.45)',
+                        background: 'var(--btn-bg-active)',
+                        border: '1px solid var(--border-subtle)',
+                        borderLeft: isFocused ? '4px solid var(--accent-primary)' : '4px solid var(--accent-dim)',
                         boxShadow: isFocused
                             ? '0 4px 20px rgba(6, 214, 160, 0.25), -2px 0 12px rgba(6, 214, 160, 0.35)'
                             : '0 2px 8px rgba(6, 214, 160, 0.08)',
-                        color: '#ffffff',
-                        textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9)',
+                        color: 'var(--text-bright)',
                         transition: 'all 0.2s ease',
                     } : {
                         display: 'flex',
@@ -46,16 +45,15 @@ export const Sidebar = ({ selectedType, onSelect, isFocused }: SidebarProps) => 
                         borderRadius: '8px',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                        background: 'rgba(30, 41, 59, 0.6)',
-                        border: '1px solid rgba(61, 74, 110, 0.3)',
+                        background: 'var(--btn-bg)',
+                        border: '1px solid var(--border-subtle)',
                         borderLeft: '4px solid transparent',
                         boxShadow: 'none',
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)',
+                        color: 'var(--text-body)',
                         transition: 'all 0.2s ease',
                     }}
                 >
-                    <span className="text-xl transition-transform duration-300 hover:scale-110" style={selectedType === t.id ? { filter: 'drop-shadow(0 0 8px rgba(6, 214, 160, 0.6))' } : {}}>{t.icon}</span>
+                    <span className="text-xl transition-transform duration-300 hover:scale-110">{t.icon}</span>
                     <span>{t.label}</span>
                 </button>
             ))}
